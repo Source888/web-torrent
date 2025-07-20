@@ -58,7 +58,9 @@ systemctl status transmission-daemon --no-pager
 #Create neccessary directories
 mkdir -p torrents
 mkdir -p downloads
+#detect php user
+PHP_USER=$(ps aux | grep -E 'php-fpm|php-cgi' | awk '{print $1}' | head -n 1)
 
 # Set permissions for the directories
-sudo chown -R www-data:www-data torrents
-sudo chown -R www-data:www-data downloads
+sudo chown -R "$PHP_USER":"$PHP_USER" torrents downloads
+sudo chmod -R 755 torrents downloads
