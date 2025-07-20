@@ -56,9 +56,9 @@ systemctl status transmission-daemon --no-pager
 
 
 #Create neccessary directories
-mkdir -p /torrents
-mkdir -p /downloads
+mkdir -p torrents
+mkdir -p downloads
 
 # Set permissions for the directories
-sudo chown -R www-data:www-data /torrents
-sudo chown -R www-data:www-data /downloads
+sudo chown -R www-data:www-data torrents
+sudo chown -R www-data:www-data downloads
