@@ -70,7 +70,6 @@ class TorrentHandler {
                 $db->close();
                 return true;
             } else {
-                var_dump($response);
                 echo "Failed to start download: " . (isset($responseData['result']) ? $responseData['result'] : 'Unknown error');
             }
             return false;

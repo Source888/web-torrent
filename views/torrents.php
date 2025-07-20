@@ -32,7 +32,16 @@ $data['description'] = 'Manage your torrents here.';
                     <td><?php echo htmlspecialchars($torrent['sizeWhenDone']); ?></td>
                     <td><?php echo htmlspecialchars($statusLabels[$torrent['status']]); ?></td>
                     <td><?php echo htmlspecialchars($torrent['percentDone'] * 100); ?>%</td>
-                    <td><a href="download.php?id=<?php echo $torrent['id']; ?>">Download</a></td>
+                    <td>
+                        <a href="download.php?id=<?php echo $torrent['id']; ?>">Download</a>
+                        <a href="remove.php?id=<?php echo $torrent['id']; ?>">Remove</a>
+                        <a href="delete.php?id=<?php echo $torrent['id']; ?>&removeData=true">Delete with Data</a>
+                        <a href="delete.php?id=<?php echo $torrent['id']; ?>&removeData=false">Delete without Data</a>
+                        <a href="details.php?id=<?php echo $torrent['id']; ?>">Details</a>
+                        <a href="pause.php?id=<?php echo $torrent['id']; ?>">Pause</a>
+                        <a href="resume.php?id=<?php echo $torrent['id']; ?>">Resume</a>
+                        <a href="verify.php?id=<?php echo $torrent['id']; ?>">Verify</a>
+                    </td>
                 </tr>
             <?php endforeach; ?>
         </tbody>
